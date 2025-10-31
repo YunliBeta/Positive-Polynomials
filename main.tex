@@ -11,6 +11,25 @@
 \usepackage{xcolor}
 \usepackage{tgpagella}
 
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\cc}[1]{\mathcal{#1}}
+\newcommand{\f}[1]{\mathfrak{#1}}
+\newcommand{\rad}[1]{\sqrt{\mathfrak{#1}}}
+\newcommand{\spec}{\mathrm{Spec}}
+\newcommand{\clop}{\mathrm{Clop}}
+\newcommand{\p}{\mathfrak{p}}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\q}{\mathfrak{q}}
+\newcommand{\m}{\mathfrak{m}}
+\newcommand{\oo}{\mathcal{O}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\w}[1]{\widetilde{#1}}
+\newcommand{\vk}{\mathsf{Var}_k}
+\newcommand{\im}{\mathrm{image}\,}
+\newcommand{\lcm}{\mathrm{lcm}}
+\newcommand{\supp}{\mathrm{supp}\,}
+\newcommand{\kk}{^{[k]}}
+\newcommand{\sat}{^\mathrm{sat}}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
@@ -28,9 +47,29 @@
 \maketitle
 \section{Introduction}
 
+We denote as $\bb{P}^n$ the $n$-dimensional projective space over $\bb{C}$. We write $S=\bb{C}[x_0,\cdots,x_n]$ and $\m=(x_0,\cdots,x_n)\subset S$.
+
+\begin{defi}
+    Let $I\subseteq S$ be a homogeneous ideal. The \textbf{saturation} of $I$ is defined to be
+    \begin{equation*}
+        I\sat = \{ \; f\in S \mid f\m^k\subseteq I\mathrm{\;for\;some\;}k\geqslant 0 \; \}.
+    \end{equation*}
+\end{defi}
 
 \begin{theorem}[\cite{SAT}]
-    
+    Let $X\subseteq \bb{P}^n$ be a smooth variety and $I\subseteq S$ be its homogeneous ideal. Then $I^{(d)}=(I^d)\sat$ for all $d$.
+\end{theorem}
+
+\begin{theorem}\thlabel{sat}
+    Let $X\subseteq \bb{P}^n$ be a smooth irreducible variety and $I\subseteq S$ be its homogeneous ideal. Let $P\in \bb{P}^n$ be a real point of $X$, then $I^2$ and $I^{(2)}$ coincide when localized at $P$.
+\end{theorem}
+
+\begin{proof}
+    We only need to prove $I^{(2)}\subseteq I$ when localized at $P$. Let $I=(g_1,\cdots,g_m)$ and $d$ be the maximal degree of the $g_i$. As $I$ is prime, $I^2$ and $I^{(2)}$ agree when localized at $I$. Take any form $f\in I^{(2)}$, then by \thref{sat} we have $f\in (I^2)\sat$, and so $f\m^k\subset I^2$ for some $k$. In particular, $(x_0^k+\cdots+x_n^k)f\in I^2$ for some $k$. Take $k$ to be even, then $x_0^k+\cdots+x_n^k\neq 0$ at $P$, so $f\in I^{(2)}$ when localized at $P$.
+\end{proof}
+
+\begin{theorem}
+    Let $X\subseteq \bb{P}^n$ be a smooth irreducible variety and $I\subseteq S$ be its homogeneous ideal.
 \end{theorem}
 
 
